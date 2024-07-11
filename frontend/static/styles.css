@@ -1,0 +1,222 @@
+
+body {
+    font-family: papyrus;
+    background-color: #fdfdfd;
+    color: #373a3c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* General Utility Classes */
+.wd-bg-light-blue {
+    background-color: #e9ecef;
+}
+
+.wd-component-outline {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.wd-button-blue {
+    background-color: #ff7851;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: white;
+}
+
+.wd-width-80 {
+    width: 80%;
+}
+
+.wd-font-18 {
+    font-size: 18px;
+}
+
+/* Specific Element Styles */
+.inputText {
+    font-family: papyrus;
+    font-size: 20px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #ff7851;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #373a3c;
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    font-family: Copperplate;
+    font-size: 32px;
+    color: #373a3c;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.powered-by {
+    font-family: papyrus;
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.powered-by a {
+    color: #ff7851;
+    text-decoration: none;
+}
+
+.powered-by a:hover {
+    text-decoration: underline;
+}
+
+.ingredients-interest, .ingredients {
+    font-family: papyrus;
+    font-size: 17px;
+}
+
+.ingredient-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#produceRecipe {
+    font-family: Papyrus;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    background-color: #ff7851;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 20px auto 0;
+}
+
+#produceRecipe:hover {
+    background-color: #ffce67;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #6c757d;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.icon {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 24px;
+    color: #ff7851;
+    transition: color 0.3s ease-in-out;
+}
+
+.icon:hover {
+    color: #ffce67;
+}
+
+.layout-selection {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.layout-icon {
+    cursor: pointer;
+    margin: 0 10px;
+    width: 70px;
+    height: auto;
+    border: 2px solid transparent;
+}
+
+.layout-icon.selected {
+    border-color: #ff7851;
+}
+
+.article {
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    color: #373a3c;
+}
+
+#recipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    font-family: papyrus;
+}
+
+#recipe img {
+    width: 100%;
+    height: auto;
+}
+
+.form-group label {
+    color: #6c757d;
+}
+
+.form-group input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 70%;
+    background-color: #ffffff;
+    color: #373a3c;
+}

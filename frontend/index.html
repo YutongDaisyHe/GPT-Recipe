@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Custom Recipe</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Gpt Recipe</h1>
+            </div>
+            <p class="powered-by">Powered by <a href="https://tavily.com" target="_blank">Tavily</a></p>
+            <p class = "ingredients-interest">Type ingredients and get your personalized recipe</p>
+
+        </header>
+
+        <section class="ingredient-selection">
+            <form id="ingredientForm">
+                <div class="form-group" id="ingredientGroup1">
+                    <input class = "inputText" type="text" id="ingredient1" name="ingredient1" required>
+                    <span class="icon add-ingredient">---</span>
+                    <span class="icon remove-ingredient">-</span>
+                </div>
+            </form>
+    
+            <button type="button" id="produceRecipe">Produce Recipe</button>
+
+        </section>
+
+        <section id="loading" class="hidden">
+                <div class="spinner"></div>
+                <div id="loadingMessages"></div>
+        </section>
+
+
+
+        <section id="recipe" class="hidden">
+            <!-- The recipes will be populated here -->
+        </section>
+    </div>
+
+    <script src="static/scripts.js"></script>
+</body>
+</html>
