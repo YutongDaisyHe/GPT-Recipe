@@ -33,7 +33,7 @@ function produceRecipe() {
         layout: selectedLayout
     };
 
-    fetch('http://localhost:8000/generate_recipe', {
+    fetch('http://localhost:8000/generate_recipebook', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -42,6 +42,7 @@ function produceRecipe() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         toggleLoading(false);
         displayRecipe(data);
     })
