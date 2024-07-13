@@ -1,5 +1,6 @@
 import os
 import re
+import logging
 
 class DesignerAgent:
     def __init__(self, output_dir):
@@ -17,12 +18,32 @@ class DesignerAgent:
     def designer(self, recipe):
         html_template = self.load_html_template()
         title = recipe["title"]
-        date = recipe["date"]
+        # date = recipe["date"]
         image = recipe["image"]
+        # totalTime = recipe["totalTime"]
+        servings = recipe["servings"]
+        ingredients = recipe["ingredients"]
         paragraphs = recipe["paragraphs"]
+
+        logging.debug(f"Recipe title: {title}")
+        logging.debug(f"Recipe image: {image}")
+        logging.debug(f"Recipe servings: {servings}")
+        logging.debug(f"Recipe ingredients: {ingredients}")
+        
+        # Replace basic placeholders
         html_template = html_template.replace("{{title}}", title)
         html_template = html_template.replace("{{image}}", image)
-        html_template = html_template.replace("{{date}}", date)
+        # html_template = html_template.replace("{{totalTime}}", totalTime)
+        html_template = html_template.replace("{{servings}}", str(servings))
+        # Create the ingredients list HTML
+        ingredients_html = ""
+        for ingredient in ingredients:
+            ingredients_html += f"<li>{ingredient}</li>"
+    
+        # Replace the ingredients placeholder
+        html_template = html_template.replace("{{ingredients}}", ingredients_html)
+
+        # html_template = html_template.replace("{{date}}", date)
         for i in range(5):
             html_template = html_template.replace(f"{{paragraph{i + 1}}}", paragraphs[i])
         recipe["html"] = html_template

@@ -19,8 +19,7 @@ class CuratorAgent:
                        "for me to read from a list of recipes.\n "
         }, {
             "role": "user",
-            "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
-                       f"Topic or Query: {query}\n"
+            "content": f"Topic or Query: {query}\n"
                        f"Your task is to return the 3 most relevant recipes for me to cook for the provided ingredients or "
                        f"query\n "
                        f"Here is a list of recipes:\n"

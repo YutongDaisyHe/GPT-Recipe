@@ -51,7 +51,7 @@ class EditorAgent:
             recipes_html += recipe_html
 
         # Replace placeholders in template
-        html_template = html_template.replace("{{date}}", recipes[0]["date"])
+        # html_template = html_template.replace("{{date}}", recipes[0]["date"])
         recipebook_html = html_template.replace("{{recipes}}", recipes_html)
         return recipebook_html
 

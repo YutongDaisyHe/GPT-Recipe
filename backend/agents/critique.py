@@ -13,8 +13,7 @@ class CritiqueAgent:
                        "recipe so the writer will know what to fix.\n "
         }, {
             "role": "user",
-            "content": f"Today's date is {datetime.now().strftime('%d/%m/%Y')}\n."
-                       f"{str(recipe)}\n"
+            "content": f"{str(recipe)}\n"
                        f"Your task is to provide a really short feedback on the recipe only if necessary.\n"
                        f"if you think the recipe is good, please return None.\n"
                        f"if you noticed the field 'message' in the recipe, it means the writer has revised the recipe"
