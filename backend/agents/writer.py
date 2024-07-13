@@ -6,32 +6,20 @@ import json5 as json
 sample_json = """
 {
   "title": title of the recipe,
-  "total time": total cooking time,
+  "totaltime": total cooking time,
   "servings": amount of servings,
   "ingredients": list of ingredients and amount,
-  "paragraphs": [
-    "paragraph 1",
-    "paragraph 2",
-    "paragraph 3",
-    "paragraph 4",
-    "paragraph 5",
-    ],
-    "summary": "2 sentences summary of the recipe"
+  "instructions": list of cooking steps,
+  "summary": "2 sentences summary of the recipe"
 }
 """
 
 sample_revise_json = """
 {
-    "total time": total cooking time,
+    "totaltime": total cooking time,
     "servings": amount of servings,
     "ingredients": list of ingredients and amount,
-    "paragraphs": [
-        "paragraph 1",
-        "paragraph 2",
-        "paragraph 3",
-        "paragraph 4",
-        "paragraph 5",
-    ],
+    "instructions": list of cooking steps,
     "message": "message to the critique"
 }
 """
@@ -67,17 +55,17 @@ class WriterAgent:
         response = ChatOpenAI(model='gpt-3.5-turbo', max_retries=1, model_kwargs=optional_params).invoke(lc_messages).content
         return json.loads(response)
 
-    def revise(self, article: dict):
+    def revise(self, recipe: dict):
         prompt = [{
             "role": "system",
             "content": "You are a recipe editor. Your sole purpose is to edit a well-written recipe using a "
                        "list of ingredents based on given critique\n "
         }, {
             "role": "user",
-            "content": f"{str(article)}\n"
+            "content": f"{str(recipe)}\n"
                         f"Your task is to edit the recipe based on the critique given.\n "
-                        f"Please return json format of the 'total time', 'servings', 'ingredients',\n" 
-                        f"'paragraphs' and a new 'message' field\n"
+                        f"Please return json format of the 'totaltime', 'servings', 'ingredients',\n" 
+                        f"'instructions' and a new 'message' field\n"
                         f"to the critique that explain your changes or why you didn't change anything.\n"
                         f"please return nothing but a JSON in the following format:\n"
                         f"{sample_revise_json}\n "
@@ -93,14 +81,14 @@ class WriterAgent:
         response = ChatOpenAI(model='gpt-3.5-turbo', max_retries=1, model_kwargs=optional_params).invoke(lc_messages).content
 
         response = json.loads(response)
-        print(f"For article: {article['title']}")
+        print(f"For recipe: {recipe['title']}")
         print(f"Writer Revision Message: {response['message']}\n")
         return response
 
-    def run(self, article: dict):
-        critique = article.get("critique")
+    def run(self, recipe: dict):
+        critique = recipe.get("critique")
         if critique is not None:
-            article.update(self.revise(article))
+            recipe.update(self.revise(recipe))
         else:
-            article.update(self.writer(article["query"], article["sources"]))
-        return article
+            recipe.update(self.writer(recipe["query"], recipe["sources"]))
+        return recipe

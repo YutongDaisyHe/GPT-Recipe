@@ -20,20 +20,20 @@ class DesignerAgent:
         title = recipe["title"]
         # date = recipe["date"]
         image = recipe["image"]
-        # totalTime = recipe["totalTime"]
+        totaltime = recipe["totaltime"]
         servings = recipe["servings"]
         ingredients = recipe["ingredients"]
-        paragraphs = recipe["paragraphs"]
+        instructions = recipe["instructions"]
 
-        logging.debug(f"Recipe title: {title}")
-        logging.debug(f"Recipe image: {image}")
-        logging.debug(f"Recipe servings: {servings}")
-        logging.debug(f"Recipe ingredients: {ingredients}")
+        # logging.debug(f"Recipe title: {title}")
+        # logging.debug(f"Recipe image: {image}")
+        # logging.debug(f"Recipe servings: {servings}")
+        # logging.debug(f"Recipe ingredients: {ingredients}")
         
         # Replace basic placeholders
         html_template = html_template.replace("{{title}}", title)
         html_template = html_template.replace("{{image}}", image)
-        # html_template = html_template.replace("{{totalTime}}", totalTime)
+        html_template = html_template.replace("{{totaltime}}", totaltime)
         html_template = html_template.replace("{{servings}}", str(servings))
         # Create the ingredients list HTML
         ingredients_html = ""
@@ -44,8 +44,14 @@ class DesignerAgent:
         html_template = html_template.replace("{{ingredients}}", ingredients_html)
 
         # html_template = html_template.replace("{{date}}", date)
-        for i in range(5):
-            html_template = html_template.replace(f"{{paragraph{i + 1}}}", paragraphs[i])
+        # Create the instructions list HTML
+        instructions_html = ""
+        for instruction in instructions:
+            instructions_html += f"<li>{instruction}</li>"
+    
+        # Replace the instructions placeholder
+        html_template = html_template.replace("{{instructions}}", instructions_html)
+       
         recipe["html"] = html_template
         recipe = self.save_recipe_html(recipe)
         return recipe

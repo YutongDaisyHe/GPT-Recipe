@@ -15,17 +15,17 @@ class CuratorAgent:
         """
         prompt = [{
             "role": "system",
-            "content": "You are a personal recipe creator. Your sole purpose is to choose 3 most relevant recipes "
+            "content": "You are a personal recipe creator. Your sole purpose is to choose 2 most relevant recipes "
                        "for me to read from a list of recipes.\n "
         }, {
             "role": "user",
             "content": f"Topic or Query: {query}\n"
-                       f"Your task is to return the 3 most relevant recipes for me to cook for the provided ingredients or "
+                       f"Your task is to return the 2 most relevant recipes for me to cook for the provided ingredients or "
                        f"query\n "
                        f"Here is a list of recipes:\n"
                        f"{sources}\n"
                        f"Please return nothing but a list of the strings of the URLs in this structure: ['url1',"
-                       f"'url2','url3'].\n "
+                       f"'url2','url3', 'url4', 'url5'].\n "
         }]
 
         lc_messages = convert_openai_messages(prompt)

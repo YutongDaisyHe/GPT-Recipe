@@ -1,26 +1,24 @@
 from tavily import TavilyClient
 import os
 import logging
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
-# tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
-tavily_client = TavilyClient(api_key="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")
+tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 class SearchAgent:
     def __init__(self):
         pass
 
     def search_tavily(self, query: str):
-        print("test1")
-        print(query)
-        # No topic="recipes"
+        # print("test1")
+        # print(query)
         results = tavily_client.search(query=query, max_results=3, include_images=True)
-        
+    
         # results = tavily_client.search(query=query, topic="recipes", max_results=3, include_images=True)
         # results = tavily_client.search(query='test')
-        logging.debug(f"Received results: {results}")
+        # logging.debug(f"Received results: {results}")
 
-        print("test2")
+        # print("test2")
         sources = results["results"]
         try:
             image = results["images"][0]
