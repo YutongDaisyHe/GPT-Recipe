@@ -34,13 +34,13 @@ class WriterAgent:
         prompt = [{
             "role": "system",
             "content": "You are a recipe writer. Your sole purpose is to write a well-written recipe "
-                       "according to a list of recipes using a list of ingredients.\n "
+                       "according to a list of recipes using a list of keywords such as ingredients, cuisine types, etc.\n "
         }, {
             "role": "user",
             "content": f"Query or Topic: {query}"
                        f"{sources}\n"
                        f"Your task is to write a critically acclaimed recipe for me about the provided query or "
-                       f"ingredients based on the sources.\n "
+                       f"keywords such as ingredients, cuisine types, etc. based on the sources.\n "
                        f"Please return nothing but a JSON in the following format:\n"
                        f"{sample_json}\n "
 
@@ -59,7 +59,7 @@ class WriterAgent:
         prompt = [{
             "role": "system",
             "content": "You are a recipe editor. Your sole purpose is to edit a well-written recipe using a "
-                       "list of ingredents based on given critique\n "
+                       "list of keywords for ingredents, cuisine types, etc. based on given critique\n "
         }, {
             "role": "user",
             "content": f"{str(recipe)}\n"

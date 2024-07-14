@@ -17,9 +17,9 @@ class CritiqueAgent:
                        f"Your task is to provide a really short feedback on the recipe only if necessary.\n"
                        f"if you think the recipe is good, please return None.\n"
                        f"if you noticed the field 'message' in the recipe, it means the writer has revised the recipe"
-                        f"based on your previous critique. you can provide feedback on the revised recipe or just "
+                       f"based on your previous critique. you can provide feedback on the revised recipe or just "
                        f"return None if you think the recipe is good.\n"
-                        f"Please return a string of your critique or None.\n"
+                       f"Please return a string of your critique or None.\n"
         }]
 
         lc_messages = convert_openai_messages(prompt)

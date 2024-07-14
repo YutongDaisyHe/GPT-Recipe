@@ -16,7 +16,7 @@ def generate_recipebook():
 
     data = request.json
     master_agent = MasterAgent()
-    recipebook = master_agent.run(data["ingredients"], data["layout"])
+    recipebook = master_agent.run(data["keywords"], data["layout"])
 
     logging.debug(f"Generated recipebook path: {recipebook}")
 

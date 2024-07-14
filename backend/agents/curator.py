@@ -20,8 +20,8 @@ class CuratorAgent:
         }, {
             "role": "user",
             "content": f"Topic or Query: {query}\n"
-                       f"Your task is to return the 2 most relevant recipes for me to cook for the provided ingredients or "
-                       f"query\n "
+                       f"Your task is to return the 2 most relevant recipes for me to cook for the provided keywords or "
+                       f"query such as ingredients, cuisine types, etc.\n "
                        f"Here is a list of recipes:\n"
                        f"{sources}\n"
                        f"Please return nothing but a list of the strings of the URLs in this structure: ['url1',"
