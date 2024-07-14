@@ -1,26 +1,26 @@
 
 let selectedLayout = 'layout_1.html'; // Default layout
 
-function selectLayout(event) {
-    document.querySelectorAll('.layout-icon').forEach(icon => {
-        icon.classList.remove('selected');
-    });
-    event.target.classList.add('selected');
-    selectedLayout = event.target.getAttribute('data-layout');
-}
+// function selectLayout(event) {
+//     document.querySelectorAll('.layout-icon').forEach(icon => {
+//         icon.classList.remove('selected');
+//     });
+//     event.target.classList.add('selected');
+//     selectedLayout = event.target.getAttribute('data-layout');
+// }
 
 
 function produceRecipe() {
-    var ingredients = [];
-    for (var i = 1; i <= ingredientCount; i++) {
-        var ingredient = document.getElementById('ingredient' + i).value.trim();
-        if (ingredient) {
-            ingredients.push(ingredient);
+    var keywords = [];
+    for (var i = 1; i <= keywordCount; i++) {
+        var keyword = document.getElementById('keyword' + i).value.trim();
+        if (keyword) {
+            keywords.push(keyword);
         }
     }
 
-    if (ingredients.length === 0) {
-        alert('Please fill in at least one ingredient.');
+    if (keywords.length === 0) {
+        alert('Please fill in at least one keyword.');
         return;
     }
 
@@ -29,7 +29,7 @@ function produceRecipe() {
 
 
     const payload = {
-        ingredients: ingredients,
+        keywords: keywords,
         layout: selectedLayout
     };
 
@@ -77,7 +77,7 @@ function toggleLoading(isLoading) {
 }
 
 
-let ingredientCount = 1;
+let keywordCount = 1;
 
 window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('produceRecipe').addEventListener('click', produceRecipe);
@@ -85,61 +85,61 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // document.querySelectorAll('.layout-icon').forEach(icon => {
     //     icon.addEventListener('click', selectLayout);
     // });
-    addIconToLastingredient();
+    addIconToLastkeyword();
 });
 
-function addIconToLastingredient() {
-    // Remove icons from all ingredients
-    document.querySelectorAll('.add-ingredient, .remove-ingredient').forEach(icon => {
+function addIconToLastkeyword() {
+    // Remove icons from all keywords
+    document.querySelectorAll('.add-keyword, .remove-keyword').forEach(icon => {
         icon.remove();
     });
 
-    // Add icons to the last ingredient only
-    const lastingredient = document.getElementById('ingredientGroup' + ingredientCount);
-    if (lastingredient) {
+    // Add icons to the last keyword only
+    const lastkeyword = document.getElementById('keywordGroup' + keywordCount);
+    if (lastkeyword) {
         const addIcon = document.createElement('span');
-        addIcon.className = 'icon add-ingredient';
+        addIcon.className = 'icon add-keyword';
         addIcon.textContent = '+';
-        addIcon.addEventListener('click', addingredientField);
-        lastingredient.appendChild(addIcon);
+        addIcon.addEventListener('click', addkeywordField);
+        lastkeyword.appendChild(addIcon);
 
-        if (ingredientCount > 1) {
+        if (keywordCount > 1) {
             const removeIcon = document.createElement('span');
-            removeIcon.className = 'icon remove-ingredient';
+            removeIcon.className = 'icon remove-keyword';
             removeIcon.textContent = '-';
-            removeIcon.addEventListener('click', removeingredientField);
-            lastingredient.appendChild(removeIcon);
+            removeIcon.addEventListener('click', removekeywordField);
+            lastkeyword.appendChild(removeIcon);
         }
     }
 }
 
-function addingredientField() {
-    ingredientCount++;
+function addkeywordField() {
+    keywordCount++;
     const formGroup = document.createElement('div');
     formGroup.className = 'form-group';
-    formGroup.id = 'ingredientGroup' + ingredientCount;
+    formGroup.id = 'keywordGroup' + keywordCount;
 
     const inputElement = document.createElement('input');
     inputElement.type = 'text';
-    inputElement.id = 'ingredient' + ingredientCount;
-    inputElement.name = 'ingredient' + ingredientCount;
+    inputElement.id = 'keyword' + keywordCount;
+    inputElement.name = 'keyword' + keywordCount;
     inputElement.className = 'inputText';
     inputElement.required = true;
 
     formGroup.appendChild(inputElement);
 
-    document.getElementById('ingredientForm').appendChild(formGroup);
+    document.getElementById('keywordForm').appendChild(formGroup);
 
-    addIconToLastingredient();
+    addIconToLastkeyword();
 }
 
 
-function removeingredientField(event) {
-    const ingredientGroup = event.target.parentElement;
-    if (ingredientGroup && ingredientGroup.id !== 'ingredientGroup1') {
-        ingredientGroup.remove();
-        ingredientCount--;
-        addIconToLastingredient();
+function removekeywordField(event) {
+    const keywordGroup = event.target.parentElement;
+    if (keywordGroup && keywordGroup.id !== 'keywordGroup1') {
+        keywordGroup.remove();
+        keywordCount--;
+        addIconToLastkeyword();
     }
 }
 

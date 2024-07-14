@@ -11,23 +11,24 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <h1>Gpt RecipeBook</h1>
+                <h1>GPT RecipeBook</h1>
             </div>
             <p class="powered-by">Powered by <a href="https://tavily.com" target="_blank">Tavily</a></p>
-            <p class = "ingredients-interest">Type ingredients for each recipe and get your personalized recipe book</p>
+            <p class = "keywords-interest">Type keywords (ingredients, cuisine types, etc.) to get your personalized recipe.</p> 
+            <p class = "keywords-interest">To obtain more recipes in your recipe book, click + and type another sets of keywords.</p>
 
         </header>
 
-        <section class="ingredient-selection">
-            <form id="ingredientForm">
-                <div class="form-group" id="ingredientGroup1">
-                    <input class = "inputText" type="text" id="ingredient1" name="ingredient1" required>
-                    <span class="icon add-ingredient">---</span>
-                    <span class="icon remove-ingredient">-</span>
+        <section class="keyword-selection">
+            <form id="keywordForm">
+                <div class="form-group" id="keywordGroup1">
+                    <input class = "inputText" type="text" id="keyword1" name="keyword1" required>
+                    <span class="icon add-keyword">+</span>   
+                    <span class="icon remove-keyword">-</span>
                 </div>
             </form>
     
-            <button type="button" id="produceRecipe">Produce Recipe</button>
+            <button type="button" id="produceRecipe">Produce Recipe Book</button>
 
         </section>
 
