@@ -31,6 +31,9 @@ class DesignerAgent:
         # Create the ingredients list HTML
         ingredients_html = ""
         for ingredient in ingredients:
+            # Solve the bug where the obtained ingredients are in a dictionary
+            if isinstance(ingredient, dict):
+                ingredient = f"{ingredient['ingredient']} - {ingredient['amount']}"
             ingredients_html += f"<li>{ingredient}</li>"
     
         # Replace the ingredients placeholder
@@ -39,7 +42,7 @@ class DesignerAgent:
         # Create the instructions list HTML
         instructions_html = ""
         for instruction in instructions:
-            instructions_html += f"<li>{instruction}</li>"
+            instructions_html += f"<li>{instruction.lstrip('0123456789.- ')}</li>"
     
         # Replace the instructions placeholder
         html_template = html_template.replace("{{instructions}}", instructions_html)
