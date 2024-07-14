@@ -36,13 +36,9 @@ class MasterAgent:
         workflow.add_edge('search', 'curate')
         workflow.add_edge('curate', 'write')
         workflow.add_edge('write', 'critique')
-        # workflow.add_conditional_edges(start_key='critique',
-        #                                condition=lambda x: "accept" if x['critique'] is None else "revise",
-        #                                conditional_edge_mapping={"accept": "design", "revise": "write"})
         workflow.add_conditional_edges('critique',
                                         lambda x: "accept" if x['critique'] is None else "revise",
                                         {"accept": "design", "revise": "write"})
-        # workflow.add_edge('critique', 'design')
 
         # set up start and end nodes
         workflow.set_entry_point("search")

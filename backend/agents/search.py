@@ -1,7 +1,5 @@
 from tavily import TavilyClient
 import os
-import logging
-# logging.basicConfig(level=logging.DEBUG)
 
 tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
@@ -10,15 +8,8 @@ class SearchAgent:
         pass
 
     def search_tavily(self, query: str):
-        # print("test1")
-        # print(query)
         results = tavily_client.search(query=query, max_results=3, include_images=True)
     
-        # results = tavily_client.search(query=query, topic="recipes", max_results=3, include_images=True)
-        # results = tavily_client.search(query='test')
-        # logging.debug(f"Received results: {results}")
-
-        # print("test2")
         sources = results["results"]
         try:
             image = results["images"][0]

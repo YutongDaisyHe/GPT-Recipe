@@ -1,6 +1,5 @@
 import os
 import re
-import logging
 
 class DesignerAgent:
     def __init__(self, output_dir):
@@ -18,17 +17,11 @@ class DesignerAgent:
     def designer(self, recipe):
         html_template = self.load_html_template()
         title = recipe["title"]
-        # date = recipe["date"]
         image = recipe["image"]
         totaltime = recipe["totaltime"]
         servings = recipe["servings"]
         ingredients = recipe["ingredients"]
         instructions = recipe["instructions"]
-
-        # logging.debug(f"Recipe title: {title}")
-        # logging.debug(f"Recipe image: {image}")
-        # logging.debug(f"Recipe servings: {servings}")
-        # logging.debug(f"Recipe ingredients: {ingredients}")
         
         # Replace basic placeholders
         html_template = html_template.replace("{{title}}", title)
@@ -43,7 +36,6 @@ class DesignerAgent:
         # Replace the ingredients placeholder
         html_template = html_template.replace("{{ingredients}}", ingredients_html)
 
-        # html_template = html_template.replace("{{date}}", date)
         # Create the instructions list HTML
         instructions_html = ""
         for instruction in instructions:
