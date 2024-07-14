@@ -1,5 +1,7 @@
 from tavily import TavilyClient
 import os
+import requests
+
 
 tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
@@ -13,6 +15,11 @@ class SearchAgent:
         sources = results["results"]
         try:
             image = results["images"][0]
+            # Check if the image URL is accessible
+            response = requests.get(image)
+            if response.status_code != 200:
+                image = "https://www.snapfish.com/blog/wp-content/uploads/2018/09/Screenshot_2.jpg"
+    
         except:
             image = "https://www.snapfish.com/blog/wp-content/uploads/2018/09/Screenshot_2.jpg"
         return sources, image
