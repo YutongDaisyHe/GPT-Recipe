@@ -50,7 +50,7 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/yourusername/gpt-recipe.git
+   git clone https://github.com/nala-he/gpt-recipe.git
 
 2. Export your API Keys
    ```sh
