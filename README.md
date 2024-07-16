@@ -1,23 +1,23 @@
 # GPT Recipe
 
-Welcome to the GPT Recipe project, an innovative autonomous agent designed to create personalized recipe books tailored to user preferences. GPT Recipe revolutionizes the way we discover and enjoy recipes by leveraging the power of AI to curate, write, design, and edit content based on individual tastes and interests.
+Welcome to the GPT Recipe project, inspired by the [GPT Newspaper](https://github.com/rotemweiss57/gpt-newspaper.git). GPT Recipe harnesses the power of AI (OpenAI and TAVILY) to search, curate, write, critique, design, edit, and publish personalized recipe books tailored to your unique preferences. 
 
 ## 🔍 Overview
 
 GPT Recipe consists of seven specialized sub-agents in LangChain's new [LangGraph Library](https://github.com/langchain-ai/langgraph):
 
-1. **Search Agent**: Scours the web for the latest and most relevant recipes.
-2. **Curator Agent**: Filters and selects recipes based on user-defined preferences and interests.
-3. **Writer Agent**: Crafts engaging and reader-friendly recipes.
-4. **Critique Agent**: Provides feedback to the writer until the recipe is approved.
-5. **Designer Agent**: Layouts and designs the recipes for an aesthetically pleasing reading experience.
+1. **Search Agent**: Seaches the web for the most relevant recipes using Tavily API.
+2. **Curator Agent**: Filters and selects recipes based on user input keywords such as ingredients and cuisine types.
+3. **Writer Agent**: Crafts reader-friendly recipes.
+4. **Critique Agent**: Provides feedback on a given recipe using OpenAI's language model.
+5. **Designer Agent**: Designs and organizes the recipe layout.
 6. **Editor Agent**: Constructs the recipe book based on the produced recipes.
 7. **Publisher Agent**: Publishes the recipe book to the frontend or desired service.
 
 Each agent plays a critical role in delivering a unique and personalized recipe book experience.
 
 <div align="center">
-<img align="center" height="500" src="https://example.com/gpt-recipe-architecture.png" alt="GPT Recipe Architecture">
+<img align="center" src="gpt-recipe-architecture.png" alt="GPT Recipe Architecture">
 </div>
 
 ## Demo
@@ -25,19 +25,19 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
 
 ## 🌟 Features
 
-- **Personalized Content**: Get recipes that align with your tastes and preferences.
-- **Diverse Sources**: Aggregates recipes from a wide range of reputable sources.
-- **Engaging Design**: Enjoy a visually appealing layout and design.
-- **Quality Assurance**: Rigorous editing ensures reliable and accurate recipe instructions.
-- **User-Friendly Interface**: Easy-to-use platform for setting preferences and receiving your recipe book.
+- **Personalized Content**: Receive recipes tailored to your specific tastes and preferences.
+- **Diverse Sources**: Access recipes from a wide range of reputable sources.
+- **Engaging Design**: Enjoy a visually appealing and well-organized recipe layout.
+- **Quality Assurance**: Benefit from rigorous editing that ensures reliable and accurate recipe instructions.
+- **User-Friendly Interface**: Use an easy-to-navigate platform to set your preferences and receive your personalized recipe book.
 
 ## 🛠️ How It Works
 
-1. **Setting Preferences**: Users input their interests, preferred ingredients, and cuisine types.
-2. **Automated Curation**: The Search and Curator Agents find and select recipes.
-3. **Content Creation**: The Writer Agent drafts recipes, which are then designed by the Designer Agent.
-4. **Recipe Book Design**: The Editor Agent reviews and finalizes the content.
-5. **Delivery**: Users receive their personalized recipe book in their mailbox.
+1. **Setting Preferences**: Users input keywords for recipes, including interests, preferred ingredients, and cuisine types.
+2. **Automated Curation**: The Search and Curator Agents find and select the most relevant recipes.
+3. **Content Creation**: The Writer Agent drafts the recipes, and the Designer Agent designs them.
+4. **Recipe Book Design**: The Editor Agent reviews and finalizes the recipe book content.
+5. **Delivery**: Users receive their personalized recipe book.
 
 ## 🚀 Getting Started
 
@@ -70,9 +70,3 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
     http://localhost:5000/
     
 6. Have fun searching for recipes and enjoying your meals!
-
-## 🛡️ Disclaimer
-
-GPT Recipe is an experimental project and is provided "as-is" without any warranty. It is intended for personal use and not as a replacement for professional recipe books or culinary advice.
-
-
