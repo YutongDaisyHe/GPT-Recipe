@@ -21,12 +21,7 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
 </div>
 
 ## Demo
-<div align="center">
-    <video width="560" height="315" controls>
-        <source src="docs/gpt-recipe-demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+[Watch the demo video](docs/gpt-recipe-demo.mp4)
 
 ## Features
 
