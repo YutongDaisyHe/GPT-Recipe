@@ -2,7 +2,7 @@
 
 Welcome to the GPT Recipe project, inspired by the [GPT Newspaper](https://github.com/rotemweiss57/gpt-newspaper.git). GPT Recipe harnesses the power of AI (OpenAI and TAVILY) to search, curate, write, critique, design, edit, and publish personalized recipe books tailored to your unique preferences. 
 
-## 🔍 Overview
+## Overview
 
 GPT Recipe consists of seven specialized sub-agents in LangChain's new [LangGraph Library](https://github.com/langchain-ai/langgraph):
 
@@ -17,13 +17,18 @@ GPT Recipe consists of seven specialized sub-agents in LangChain's new [LangGrap
 Each agent plays a critical role in delivering a unique and personalized recipe book experience.
 
 <div align="center">
-<img align="center" src="gpt-recipe-architecture.png" alt="GPT Recipe Architecture">
+    <img src="docs/gpt-recipe-architecture.png" alt="GPT Recipe Architecture">
 </div>
 
 ## Demo
-[Check out our demo video here](https://example.com/gpt-recipe-demo)
+<div align="center">
+    <video width="560" height="315" controls>
+        <source src="docs/gpt-recipe-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
-## 🌟 Features
+## Features
 
 - **Personalized Content**: Receive recipes tailored to your specific tastes and preferences.
 - **Diverse Sources**: Access recipes from a wide range of reputable sources.
@@ -31,7 +36,7 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
 - **Quality Assurance**: Benefit from rigorous editing that ensures reliable and accurate recipe instructions.
 - **User-Friendly Interface**: Use an easy-to-navigate platform to set your preferences and receive your personalized recipe book.
 
-## 🛠️ How It Works
+## How It Works
 
 1. **Setting Preferences**: Users input keywords for recipes, including interests, preferred ingredients, and cuisine types.
 2. **Automated Curation**: The Search and Curator Agents find and select the most relevant recipes.
@@ -39,7 +44,7 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
 4. **Recipe Book Design**: The Editor Agent reviews and finalizes the recipe book content.
 5. **Delivery**: Users receive their personalized recipe book.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
