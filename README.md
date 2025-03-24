@@ -70,3 +70,7 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
     http://localhost:5000/
     
 6. Have fun searching for recipes and enjoying your meals!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
