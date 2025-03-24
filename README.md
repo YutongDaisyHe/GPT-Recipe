@@ -73,4 +73,4 @@ Each agent plays a critical role in delivering a unique and personalized recipe 
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENCE).
